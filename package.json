@@ -22,7 +22,9 @@
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "test": "jest"
+    "test": "jest",
+    "release": "semantic-release",
+    "get-version": "echo $npm_package_version"
   },
   "peerDependencies": {
     "react": "^16.8.0",
@@ -40,7 +42,9 @@
       "^.+\\.(js|jsx)?$": "babel-jest"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "semantic-release": "^17.0.4"
+  },
   "plugins": [
     [
       "@semantic-release/commit-analyzer",
