@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
+  "private": true,
   "devDependencies": {
     "@testing-library/react": "^11.2.2",
     "@types/jest": "^26.0.19",
@@ -62,6 +63,7 @@
           "preset": "conventionalcommits"
         }
       ],
+      "@semantic-release/npm",
       "@semantic-release/github"
     ]
   }
