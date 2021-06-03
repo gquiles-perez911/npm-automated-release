@@ -45,19 +45,23 @@
   "dependencies": {
     "semantic-release": "^17.0.4"
   },
-  "plugins": [
-    [
-      "@semantic-release/commit-analyzer",
-      {
-        "preset": "conventionalcommits"
-      }
+  "release": {
+    "branches": [
+      "main"
     ],
-    [
-      "@semantic-release/release-notes-generator",
-      {
-        "preset": "conventionalcommits"
-      }
-    ],
-    "@semantic-release/github"
-  ]
-}
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "conventionalcommits"
+        }
+      ],
+      [
+        "@semantic-release/release-notes-generator",
+        {
+          "preset": "conventionalcommits"
+        }
+      ],
+      "@semantic-release/github"
+    ]
+  }
