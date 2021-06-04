@@ -40,8 +40,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'chore(release): ${{ steps.extractver.outputs.version }}'
-          committer: cb911-bot <info@chargebacks911.com>
-          author: cb911-bot <info@chargebacks911.com>
+          #          committer: cb911-bot <info@chargebacks911.com>
+          #          author: cb911-bot <info@chargebacks911.com>
           title: 'chore(release): ${{ steps.extractver.outputs.version }}'
           body: 'Version bump in package.json and package-lock.json for release [${{ steps.extractver.outputs.version }}](https://github.com/${{github.repository}}/releases/tag/v${{ steps.extractver.outputs.version }})'
           branch: version-bump/${{ steps.extractver.outputs.version }}
