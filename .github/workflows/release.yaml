@@ -25,7 +25,7 @@ jobs:
       - name: Release to GitHub
         id: release
         env:
-          GITHUB_TOKEN: ${{ secrets.DRM_GIT_HUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_AUTHOR_NAME: cb911-bot
           GIT_AUTHOR_EMAIL: info@chargebacks911.com
           GIT_COMMITTER_NAME: cb911-bot
@@ -38,7 +38,7 @@ jobs:
         if: steps.initversion.outputs.version != steps.extractver.outputs.version
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.DRM_GIT_HUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'chore(release): ${{ steps.extractver.outputs.version }}'
           committer: cb911-bot <info@chargebacks911.com>
           author: cb911-bot <info@chargebacks911.com>
