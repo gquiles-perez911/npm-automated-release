@@ -26,7 +26,7 @@ jobs:
     steps:
       - name: Autoapproving
         uses: hmarr/auto-approve-action@v2.0.0
-        if: github.actor == 'cb911-bot'
+        if: github.actor == 'gquiles-perez911'
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
@@ -36,10 +36,10 @@ jobs:
     steps:
       - name: Automerging
         uses: pascalgn/automerge-action@v0.7.5
-        if: github.actor == 'cb911-bot'
+        if: github.actor == 'gquiles-perez911'
         env:
-          GITHUB_TOKEN: "${{ secrets.DRM_GIT_HUB_TOKEN }}"
-          GITHUB_LOGIN: asyncapi-bot
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          GITHUB_LOGIN: gquiles-perez911
           MERGE_LABELS: ""
           MERGE_METHOD: "squash"
           MERGE_COMMIT_MESSAGE: "pull-request-title"
