@@ -1,3 +1,3 @@
 # GitHub Actions Experiments
 
-Experimenting with Github Actions.
+Experimenting with GitHub Actions.
