@@ -5,6 +5,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
     "@testing-library/react": "^11.2.2",
     "@types/jest": "^26.0.19",
     "@types/react": "^17.0.0",
