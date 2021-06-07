@@ -1,0 +1,34 @@
+name: Create Release
+
+on:
+  workflow_run:
+    workflows: [ "Automerge release bump PR" ]
+    branches: [ main, master ]
+    types:
+      - completed
+
+
+jobs:
+  release:
+    name: 'Create Release'
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 13
+      - name: Install dependencies
+        run: npm ci
+      - name: Get version from package.json before release step
+        id: initversion
+        run: echo "::set-output name=version::$(npm run get-version --silent)"
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: 'v${{ steps.extractver.outputs.version }}'
+          body_path: CHANGELOG.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
