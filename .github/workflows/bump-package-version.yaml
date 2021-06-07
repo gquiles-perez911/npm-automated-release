@@ -1,4 +1,4 @@
-name: Release
+name: Bump Package version
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   release:
-    name: 'Release GitHub'
+    name: 'Bump Package Version'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -22,7 +22,7 @@ jobs:
       - name: Get version from package.json before release step
         id: initversion
         run: echo "::set-output name=version::$(npm run get-version --silent)"
-      - name: Release to GitHub
+      - name: Bump package.json version
         id: release
         env:
           GITHUB_TOKEN: ${{ secrets.DRM_GIT_HUB_TOKEN }}
