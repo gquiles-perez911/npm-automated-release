@@ -1,18 +1,13 @@
 name: Create Release
 
 on:
-  workflow_run:
-    workflows: [ "Automerge release bump PR" ]
+  push:
     branches: [ main, master ]
-    types:
-      - completed
-
 
 jobs:
   release:
     name: 'Create Release'
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -31,4 +26,26 @@ jobs:
           name: 'v${{ steps.extractver.outputs.version }}'
           body_path: CHANGELOG.md
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.DRM_GIT_HUB_TOKEN }}
+  publish:
+    name: Publish to Github Package Registry
+    needs: [ release ]
+    if: github.event.base_ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup NodeJS
+        uses: actions/setup-node@v1
+        with:
+          always-auth: true
+          node-version: '12.x'
+          registry-url: 'https://npm.pkg.github.com'
+      - run: npm config set python python2.7
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.DRM_GIT_HUB_TOKEN}}
+      - run: npm install --ignore-scripts
+      - run: yarn test
+      - run: yarn build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.DRM_GIT_HUB_TOKEN }}
