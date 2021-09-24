@@ -18,4 +18,4 @@ Node Releases Schedule
 | v14 | 2023-04-30 |  
 | v16 | 2024-04-30 |
 
-fix(pencil): stop graphite breaking when too much pressure applied
+fix(pencil): stop graphite breaking when too much pressure applied.
