@@ -1,3 +1,10 @@
+### [1.0.15](https://github.com/gquiles-perez911/npm-automated-release/compare/v1.0.14...v1.0.15) (2021-09-24)
+
+
+### Bug Fixes
+
+* **12312:** asdsada ([2a8f05e](https://github.com/gquiles-perez911/npm-automated-release/commit/2a8f05e429e8e49e614dacf9b3d1a88aba28eca9))
+
 ### [1.0.14](https://github.com/gquiles-perez911/npm-automated-release/compare/v1.0.13...v1.0.14) (2021-09-24)
 
 
