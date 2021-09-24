@@ -61,17 +61,16 @@ jobs:
     steps:
       - name: Autoapproving
         uses: hmarr/auto-approve-action@v2.0.0
-        if: github.actor == 'github-actions' || github.actor == 'eresponseservices'
         with:
           github-token: "${{ secrets.DRM_GIT_HUB_TOKEN }}"
 
   automerge:
     needs: [ autoapprove ]
     runs-on: ubuntu-latest
+    if: ${{ startsWith(github.event.pull_request.title, 'chore(release)') }}
     steps:
       - name: Automerging
         uses: pascalgn/automerge-action@v0.7.5
-        if: github.actor == 'github-actions' || github.actor == 'eresponseservices'
         env:
           GITHUB_TOKEN: "${{ secrets.DRM_GIT_HUB_TOKEN }}"
           GITHUB_LOGIN: cb911-bot
