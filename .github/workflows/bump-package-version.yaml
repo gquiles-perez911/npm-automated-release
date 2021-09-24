@@ -38,7 +38,7 @@ jobs:
         if: steps.initversion.outputs.version != steps.extractver.outputs.version
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.DRM_GIT_HUB_TOKEN }}
           commit-message: 'chore(release): ${{ steps.extractver.outputs.version }}'
           committer: cb911-bot <info@chargebacks911.com>
           author: cb911-bot <info@chargebacks911.com>

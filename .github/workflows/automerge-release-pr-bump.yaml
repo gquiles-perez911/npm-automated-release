@@ -27,6 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Autoapproving
-        uses: hmarr/auto-approve-action@v2
+        uses: hmarr/auto-approve-action@v2.0.0
         with:
-          github-token: "${{ secrets.DRM_GIT_HUB_TOKEN }}"
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
