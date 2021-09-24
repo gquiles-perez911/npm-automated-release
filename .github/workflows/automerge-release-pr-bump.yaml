@@ -24,7 +24,7 @@ on:
 
 jobs:
   autoapprove:
-    if: ${{ startsWith(github.event.pull_request.title, 'chore(release)') }}
+    if: startsWith(github.event.pull_request.title, 'chore(release)')
     runs-on: ubuntu-latest
     steps:
       - name: Autoapproving
