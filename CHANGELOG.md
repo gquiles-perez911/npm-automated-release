@@ -1,3 +1,10 @@
+### [1.0.7](https://github.com/gquiles-perez911/npm-automated-release/compare/v1.0.6...v1.0.7) (2021-09-24)
+
+
+### Bug Fixes
+
+* **pencil:** stop graphite breaking when too much pressure applied ([f4c66bc](https://github.com/gquiles-perez911/npm-automated-release/commit/f4c66bc411393dba6c5a4a36e731bd23c7066471))
+
 ### [1.0.6](https://github.com/gquiles-perez911/npm-automated-release/compare/v1.0.5...v1.0.6) (2021-09-24)
 
 
