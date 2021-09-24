@@ -57,6 +57,7 @@ jobs:
         run: echo "$CONDITION"
   autoapprove:
     runs-on: ubuntu-latest
+    if: ${{ startsWith(github.event.pull_request.title, 'chore(release)') }}
     steps:
       - name: Autoapproving
         uses: hmarr/auto-approve-action@v2.0.0
