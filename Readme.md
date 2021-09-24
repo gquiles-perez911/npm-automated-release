@@ -8,7 +8,7 @@ Experimenting with GitHub Actions.
 
 ### Workflows:
 
-2
+3
 
 - bump-package-version: Bump version in Pa
 
