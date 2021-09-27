@@ -1,8 +1,9 @@
 name: Create Release
 
 on:
-  push:
+  pull_request:
     branches: [ main, master ]
+    types: [ closed ]
 
 jobs:
   one:
@@ -35,7 +36,7 @@ jobs:
   release:
     name: 'Create Release'
     runs-on: ubuntu-latest
-    if: startsWith(github.event.pull_request.title, 'chore(release)')
+    if: startsWith(github.event.pull_request.title, 'chore(release)') && github.event.pull_request.merged == true
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
