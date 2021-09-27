@@ -1,3 +1,10 @@
+### [1.0.27](https://github.com/gquiles-perez911/npm-automated-release/compare/v1.0.26...v1.0.27) (2021-09-27)
+
+
+### Bug Fixes
+
+* **123:** dscsdfds ([77aebe6](https://github.com/gquiles-perez911/npm-automated-release/commit/77aebe69560c1abefbb3e6c7cd55329a026c836f))
+
 ### [1.0.26](https://github.com/gquiles-perez911/npm-automated-release/compare/v1.0.25...v1.0.26) (2021-09-27)
 
 
