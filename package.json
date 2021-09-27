@@ -1,6 +1,6 @@
 {
   "name": "DocumentViewer",
-  "version": "1.0.0",
+  "version": "1.0.26",
   "main": "dist/index.js",
   "license": "MIT",
   "private": true,
